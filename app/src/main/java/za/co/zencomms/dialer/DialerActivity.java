@@ -72,6 +72,9 @@ public class DialerActivity extends MainActivity implements AddressText.AddressC
         super.onCreate(savedInstanceState);
 
         mInterfaceLoaded = false;
+
+        // TODO: go back to launcher if not setup.
+
         // Uses the fragment container layout to inflate the dialer view instead of using a fragment
         new AsyncLayoutInflater(this)
                 .inflate(

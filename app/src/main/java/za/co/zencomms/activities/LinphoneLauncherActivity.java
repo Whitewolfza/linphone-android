@@ -98,7 +98,9 @@ public class LinphoneLauncherActivity extends LinphoneGenericActivity
         //            ActivityCompat.requestPermissions(
         //                    this, new String[] {Manifest.permission.READ_PHONE_STATE}, 0);
         //        }
-
+        Core core = LinphoneManager.getCore();
+        core.clearAllAuthInfo();
+        core.clearProxyConfig();
         mPrefs = LinphonePreferences.instance();
         Functions.parent = this;
         if (LinphoneService.isReady()) {
