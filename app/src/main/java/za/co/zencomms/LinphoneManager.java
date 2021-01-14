@@ -375,7 +375,11 @@ public class LinphoneManager implements SensorEventListener {
                         @Override
                         public void run() {
                             if (mCore != null) {
-                                mCore.iterate();
+                                try {
+                                    mCore.iterate();
+                                } catch (Exception ex) {
+
+                                }
                             }
                         }
                     };

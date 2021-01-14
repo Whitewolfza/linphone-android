@@ -617,27 +617,27 @@
   <string name="content_description_record_call">Record call</string>
   <!--region  Client Values  -->
   <string name="clientid" translatable="false">2</string>
-  <string name="DBconnS" translatable="false">jdbc:postgresql://[DB SERVER]/[DB NAME]</string>
-  <string name="DBUser" translatable="false">[DB Username]</string>
-  <string name="DBPass" translatable="false">[DB Password]</string>
+  <string name="DBconnS" translatable="false">jdbc:postgresql://41.76.213.244:25383/zencomms</string>
+  <string name="DBUser" translatable="false">CleverFinUser</string>
+  <string name="DBPass" translatable="false">F!nu53r%*33@$*24</string>
   <!--endregion  Client Values  -->
   <!--  region Exceptions  -->
-  <string name="SupportEmail">[Support Email Address]</string>
-  <string name="BugTrackerURL">[API Url]</string>
+  <string name="SupportEmail">bennie@clevercom.co.za&lt;</string>
+  <string name="BugTrackerURL">https://www.clevercom.co.za/CleverBugs/api/Bug</string>
   <string name="projectID">14</string>
   <string name="ErrShortDesc">Xcode Bug</string>
-  <string name="Password">[API Password]</string>
-  <string name="Username">[API Username]</string>
+  <string name="Password">9dfb6a2b3f35f47c275b33fd622f9b81</string>
+  <string name="Username">android183</string>
   <string name="LogFolder">/Xcode_files/</string>
   <string name="LogFile">XcodeErrorLog.log</string>
-  <string name="SupportEmailUsername">[Support Email Username]</string>
-  <string name="SupportEmailPassword">[Support Email Password]</string>
-  <string name="SupportEmailSMTP">[Support Email SMTP Server]</string>
+  <string name="SupportEmailUsername">website@clevercom.co.za</string>
+  <string name="SupportEmailPassword">W3bS1te2356956_+</string>
+  <string name="SupportEmailSMTP">smtp.clevercom.co.za</string>
   <string name="SendCommand">za.co.clevercom.zenncommms2.SEND_LOG</string>
   <string name="LogCommand">za.co.clevercom.zenncommms2.LOG_LOG</string>
-  <string name="EmailUsername">[Main Email Username]</string>
-  <string name="EmailPassword">[Main Email Password]</string>
-  <string name="EmailSMTP">[Main Email SMTP Server]</string>
+  <string name="EmailUsername">website@clevercom.co.za</string>
+  <string name="EmailPassword">W3bS1te2356956_+</string>
+  <string name="EmailSMTP">smtp.clevercom.co.za</string>
   <string name="EmailPort">465</string>
   <string name="Error_Wating">An Error has occurred In the Xcode Application .. \n Please wait ....</string>
   <string name="txtExeptionTitle">An Exception has Occurred in Xcode :</string>

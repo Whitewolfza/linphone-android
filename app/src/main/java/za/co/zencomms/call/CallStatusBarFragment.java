@@ -86,6 +86,9 @@ public class CallStatusBarFragment extends Fragment {
                             final ProxyConfig proxy,
                             final RegistrationState state,
                             String message) {
+
+                        Log.d("RegStatus_" + message, state);
+
                         if (core.getProxyConfigList() == null) {
                             mStatusLed.setImageResource(R.drawable.led_disconnected);
                             mStatusText.setText(getString(R.string.no_account));

@@ -37,3 +37,8 @@ xmlrpc_url=https://subscribe.linphone.org:444/wizard.php
 
 [lime]
 lime_update_threshold=-1
+
+[audio_codec_0]
+mime=OPUS
+rate=8000
+enabled=1

@@ -1,7 +1,8 @@
 apply plugin: 'com.android.application'
 
+
 static def getPackageName() {
-    return "za.co.clevercom.zenncomms.xloud"
+    return "za.co.clevercom.zenncomms.xloud2"
 }
 
 static def firebaseEnabled() {
@@ -78,7 +79,7 @@ repositories {
 }
 
 project.tasks['preBuild'].dependsOn 'getGitVersion'
-project.version = "2.0.7"
+project.version = "2.0.8"
 android {
     lintOptions {
         abortOnError false
@@ -181,6 +182,8 @@ dependencies {
     if (firebaseEnabled()) {
         implementation 'com.google.firebase:firebase-messaging:19.0.1'
     }
+
+    implementation 'androidx.media:media:1.2.1'
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'com.google.android:flexbox:1.1.0'

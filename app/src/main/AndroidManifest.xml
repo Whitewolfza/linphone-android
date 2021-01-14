@@ -13,13 +13,15 @@
 
     <uses-permission android:name="android.permission.VIBRATE" />
     <uses-permission android:name="android.permission.CAMERA" />
+
     <!-- Needed to allow XLoud to install on tablets, since android.permission.CAMERA implies android.hardware.camera and android.hardware.camera.autofocus are required -->
     <uses-feature
         android:name="android.hardware.camera"
         android:required="false" />
 
     <!-- Needed to be able to detect a GSM call and thus pause any active SIP call, and auto fill the phone number field in assistant -->
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"
+        />
     <!-- Needed to be able to pick images from SD card to share in chat message -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <!-- Needed to store received images if the user wants to -->
@@ -50,7 +52,7 @@
     <!-- Needed for full screen intent in notifications -->
     <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT" />
 
-
+    <!--Needed show local call history-->
     <uses-permission android:name="android.permission.READ_CALL_LOG" />
     <uses-permission android:name="android.permission.WRITE_CALL_LOG" />
 
@@ -64,6 +66,7 @@
         android:xlargeScreens="true" />
 
     <application
+        android:networkSecurityConfig="@xml/security_config"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:largeHeap="true"
@@ -73,7 +76,7 @@
         android:extractNativeLibs="${extractNativeLibs}"
         android:requestLegacyExternalStorage="true">
 
-        <!-- Starting activities -->
+        <!--region Starting activities -->
 
         <activity
             android:name="za.co.zencomms.activities.LinphoneLauncherActivity"
@@ -84,8 +87,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <!-- Main activities -->
+<!--endregion-->
+        <!--region Main activities -->
 
         <activity
             android:name="za.co.zencomms.dialer.DialerActivity"
@@ -167,8 +170,8 @@
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
-
-        <!-- Call activities -->
+<!--endregion-->
+        <!--region Call activities -->
 
         <activity
             android:name="za.co.zencomms.call.CallIncomingActivity"
@@ -187,8 +190,8 @@
             android:launchMode="singleTop"
             android:showWhenLocked="true"
             android:supportsPictureInPicture="true"/>
-
-        <!-- Assistant activities -->
+<!--endregion-->
+        <!--region Assistant activities -->
 
         <activity
             android:name="za.co.zencomms.assistant.MenuAssistantActivity"/>
@@ -212,8 +215,7 @@
             android:name="za.co.zencomms.assistant.RemoteConfigurationAssistantActivity"/>
         <activity
             android:name="za.co.zencomms.assistant.EchoCancellerCalibrationAssistantActivity"/>
-
-
+<!--endregion-->
         <!--region Exceptions-->
         <activity
             android:name="za.co.clevercom.Exceptions.SendLog"
@@ -239,9 +241,7 @@
             </intent-filter>
         </activity>
         <!--endregion-->
-
-
-        <!-- Services -->
+        <!--region Services -->
 
         <service
             android:name="za.co.zencomms.service.LinphoneService"
@@ -279,8 +279,8 @@
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
         </service>
-
-        <!-- Receivers -->
+<!--endregion-->
+        <!--region Receivers -->
 
         <receiver android:name="za.co.zencomms.receivers.BootReceiver">
             <intent-filter>
@@ -301,8 +301,8 @@
                 <action android:name="org.linphone.intent.ACCOUNTACTIVATE" />
             </intent-filter>
         </receiver>
-
-        <!-- Providers -->
+<!--endregion-->
+        <!--region Providers -->
 
         <provider
             android:name="androidx.core.content.FileProvider"
@@ -313,6 +313,6 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/provider_paths" />
         </provider>
-
+<!--endregion-->
     </application>
 </manifest>

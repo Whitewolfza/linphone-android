@@ -337,6 +337,7 @@ public class AndroidAudioManager {
         if (!LinphonePreferences.instance().isDeviceRingtoneEnabled()) {
             // Enable speaker audio route, linphone library will do the ringing itself automatically
             routeAudioToSpeaker();
+
             return;
         }
 

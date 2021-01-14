@@ -28,6 +28,8 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.media.RingtoneManager;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
@@ -73,11 +75,12 @@ public class LinphoneLauncherActivity extends LinphoneGenericActivity
     private static LinphonePreferences mPrefs;
     private static ProxyConfig mProxyConfig;
     private static AuthInfo mAuthInfo;
+    private static Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
+        context = this;
         if (getResources().getBoolean(R.bool.orientation_portrait_only)) {
             setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         }
@@ -300,7 +303,6 @@ public class LinphoneLauncherActivity extends LinphoneGenericActivity
                     }
                 }
             };
-    static Context context;
 
     private void showLogin() {
         LayoutInflater li = LayoutInflater.from(this);
@@ -568,6 +570,7 @@ public class LinphoneLauncherActivity extends LinphoneGenericActivity
         // endregion Network Settings
 
         // region Audio Settings
+
         if (core != null) {
             for (final PayloadType pt : core.getAudioPayloadTypes()) {
                 pt.enable(false);
@@ -615,12 +618,31 @@ public class LinphoneLauncherActivity extends LinphoneGenericActivity
         // Set Ringtone
         //        core.getConfig().setBool("app", "device_ringtone", true);
         //        Uri defaultRingtoneUri =
-        //                RingtoneManager.getActualDefaultRingtoneUri(
-        //                        LinphoneContext.instance().getApplicationContext(),
-        //                        RingtoneManager.TYPE_RINGTONE);
-        //        //        Ringtone defaultRingtone = RingtoneManager.getRingtone(getActivity(),
-        //        // defaultRingtoneUri);
+        //        //                RingtoneManager.getActualDefaultRingtoneUri(
+        //        //                        LinphoneContext.instance().getApplicationContext(),
+        //        //                        RingtoneManager.TYPE_RINGTONE);
+        //        //        //        Ringtone defaultRingtone =
+        // RingtoneManager.getRingtone(getActivity(),
+        //        //        // defaultRingtoneUri);
         //        core.setRing(defaultRingtoneUri.getPath());
+        Uri defaultRingtoneUri =
+                RingtoneManager.getActualDefaultRingtoneUri(
+                        LinphoneContext.instance().getApplicationContext(),
+                        RingtoneManager.TYPE_RINGTONE);
+        core.setRing(defaultRingtoneUri.toString());
+        //        Ringtone defaultRingtone = RingtoneManager.getRingtone(getActivity(),
+        // defaultRingtoneUri);
+
+        // Set Ringtone
+        /* Uri ringUri =
+                Uri.parse(
+                        "android.resource://"
+                                + context.getPackageName()
+                                + "/raw/"
+                                + "ringbacktone");
+        //        core.setRing(defaultRingtoneUri.toString());
+        core.setRing(ringUri.toString());
+        // core.setRemoteRingbackTone( ringUri.toString() );*/
     }
 
     public static void appendLog(String text) {
